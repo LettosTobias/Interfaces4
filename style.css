@@ -18,7 +18,7 @@ body {
 }
 
 .boton {
-  width: 200px;
+  width: 150px;
   height: 40px;
   flex-shrink: 0;
   border-radius: 111px;
@@ -38,7 +38,6 @@ body {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  padding: 7px;
   /* Drop Shadow */
   box-shadow: 4px 5px 0px 0px #02187e;
   -webkit-text-stroke: 1px;
@@ -73,9 +72,9 @@ body {
 }
 
 #main-header {
-  position: fixed;
+  position: absolute;
   display: flex;
-  z-index: 1000;
+  z-index: 10;
   justify-content: space-between;
   background: linear-gradient(
     180deg,
@@ -86,6 +85,7 @@ body {
   text-align: center;
   padding: 15px;
   width: 100%;
+  height: 150px;
   transition: background-color 0.3s, padding 0.3s; /* Agrega transiciones suaves para cambios en el fondo y el padding */
 }
 
@@ -101,72 +101,111 @@ body {
   display: flex;
   flex-direction: row;
   position: absolute;
-  background: url(./img/fondo.jpg), lightgray 50% / cover no-repeat;
-  margin-top: 200px;
+  background: url(./img/nubes-fondo.png), lightgray 50% / cover no-repeat;
+  margin-top: 100px;
   width: 1280px;
   height: 720px;
   z-index: 0;
 }
 
-.telaraña {
-  top: 220px;
+.nubes .edificios {
   position: absolute;
-  z-index: 5;
+  z-index: 2;
+  filter: blur(3.5px);
+}
+
+.edificios {
+  position: absolute;
+  width: 100%;
+}
+
+.telaraña,
+.telaraña2 {
+  top: 890px;
+  position: absolute;
+  z-index: 34;
+}
+
+.telaraña2 {
+  top: 780px;
+  left: 1280px;
+  transform: scaleX(-1);
 }
 
 .spider1,
 .spider2,
 .spider3 {
   position: absolute;
-  top: 250px;
+  z-index: 32;
 }
 
 .spider1 {
   left: 100px;
-  top: 220px;
+  bottom: 70px;
 }
 .spider2 {
-  z-index: 4;
+  z-index: 32;
   left: 400px;
+  bottom: 0;
 }
+
+.parallax1,
+.duendePx,
+.parallax3,
+.parallax4,
+.parallax5 {
+  position: absolute;
+  bottom: 0;
+}
+
 .spider3 {
-  top: 200px;
+  bottom: 120px;
   left: 700px;
 }
 
 .lasDos {
   position: relative;
   width: 100%;
-  top: 660px;
+  top: 650px;
 }
 
 .texto {
   position: absolute;
   color: white;
   font-size: xx-large;
-  top: 150px;
-  width: 100%;
+  top: 200px;
+  left: 100px;
+  width: 92%;
   height: 500px;
   background-color: #8f6aa6;
-  z-index: 3;
+  z-index: 4;
 }
 
 .texto h1 {
   width: 60%;
-  margin-left: 2%;
   font-weight: 600;
+  font-family: Lato;
+  font-size: 60px;
+  line-height: 56.7px;
 }
 
 .texto p {
-  font-size: x-large;
-  margin-left: 2%;
-  width: 50%;
+  margin-top: 2%;
+  width: 46%;
+
+  font-family: Lato;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .uno {
   position: relative;
   width: 100%;
   height: 600px;
+  z-index: 3;
   background-color: #8f6aa6;
   transform: skew(0deg, -6deg);
   top: 0px;
@@ -184,15 +223,16 @@ body {
 
 .duende {
   position: absolute;
-  z-index: 5;
-  left: 700px;
-  top: 800px;
+  z-index: 7;
+  left: 710px;
+  bottom: -950px;
 }
 
 .spidervsMalo {
   position: absolute;
-  top: 1300px;
-  z-index: 4;
+  top: 1150px;
+  left: 90px;
+  z-index: 6;
 }
 
 .blanco {
@@ -240,30 +280,41 @@ body {
   display: flex;
   flex-direction: column;
 }
-.testSection img:first-child {
+
+.testSection .div1 {
   width: 550.108px;
   /* transform: rotate(-13.078deg); */
   flex-shrink: 0;
   object-fit: cover;
-  position: relative;
-  top: -100px;
+  position: absolute;
+  bottom: 270px;
 }
-.testSection img:nth-child(2) {
+.testSection .div2 {
   width: 550.108px;
   /* transform: rotate(-15.474deg); */
-  position: relative;
+  position: absolute;
   flex-shrink: 0;
   object-fit: cover;
-  top: -320px;
+  bottom: 50px;
 }
-.testSection img:last-child {
+.testSection .div3 {
   width: 546.108px;
   flex-shrink: 0;
   object-fit: cover;
-  position: relative;
-  top: -650px;
+  position: absolute;
+  bottom: -160px;
   left: 70px;
 }
+
+.testSection .imagen {
+  transition-duration: 0.8s;
+  transition-property: transform;
+}
+
+.testSection .imagen:hover {
+  transform: rotate(20deg);
+}
+
 .vengadores {
   color: white;
   position: relative;
@@ -326,14 +377,16 @@ body {
   height: 2000px;
   width: 1280px;
   transform: skew(0deg, 6deg);
-  overflow: auto;
 }
-.scrollFondo h1 {
-  transform: skew(0deg, -6deg);
-  margin-top: 200px;
-  position: relative;
-  left: 60px;
-  padding: 20px;
+
+.scroll {
+  position: absolute;
+  top: 4300px;
+
+  font-weight: 600;
+  font-size: xx-large;
+  left: 40px;
+  line-height: 56.7px;
 }
 
 .granPoder {
@@ -346,6 +399,11 @@ body {
   margin-left: 70px;
 }
 
+.granPoder .boton {
+  padding: 7px;
+  width: 200px;
+}
+
 .parteFinal {
   position: absolute;
   top: 6500px;
@@ -356,7 +414,7 @@ body {
   position: absolute;
   top: 0;
   background-color: white;
-  height: 900px;
+  height: 700px;
   width: 100%;
   transform: skew(0deg, -6deg);
 }
@@ -522,7 +580,7 @@ footer {
   top: 1925px;
   background-color: #5e5e5d;
   width: 100%;
-  height: 600px;
+  height: 700px;
 }
 
 footer div {
@@ -542,6 +600,7 @@ footer b {
   font-weight: 400;
   line-height: 94.5%; /* 18.9px */
   letter-spacing: 2.2px;
+  margin-top: 60px;
 }
 
 footer b {
@@ -551,68 +610,4 @@ footer b {
 footer img {
   width: 20%;
   height: 40px;
-}
-.masAmigosMAsDiversion {
-  display: flex;
-  flex-direction: row;
-  height: 200px;
-  width: 100%;
-  position: absolute;
-  overflow: scroll;
-  transform: skew(0, -6deg);
-}
-.masAmigosMAsDiversion::-webkit-scrollbar {
-  display: none;
-}
-
-.columna-imagen {
-  transition: transform 0.3s ease; /* Agrega una transición suave al cambiar la imagen */
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-}
-
-.cardsContainer {
-  display: flex;
-  flex-direction: column;
-
-  position: absolute;
-  left: 50%;
-  transition: all 1s ease;
-}
-
-h2 {
-  color: #333;
-}
-
-p {
-  color: #666;
-}
-
-.columna-imagen img {
-  width: 300px;
-
-  height: 100%;
-  transition: opacity 1s ease-in-out; /* Transición suave de cambio de imagen */
-}
-.cardsContainer .card:first-child {
-  opacity: 1;
-}
-
-.card {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.8s ease, transform 0.5s ease;
-  transform: translateY(30px);
-}
-
-.active {
-  opacity: 1;
-  transform: translateY(0);
 }

@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="p.css">
+  <title>Skew en la parte superior e inferior</title>
+  <style>
+    .skewed-div {
+      width: 200px;
+      height: 100px;
+      background-color: #3498db;
+      transform: skewY(6deg); /* Aplica skew a toda la altura */
+      margin: 50px; /* Agrega margen para visualizar completamente la transformación */
+    }
+
+    .skewed-div::before {
+      content: "";
+      position: absolute;
+      top: -10px; /* Ajusta el valor según tu diseño */
+      left: 0;
+      right: 0;
+      height: 10px;
+      background-color: inherit;
+      transform: skewY(-6deg); /* Aplica un skew inverso en la parte superior */
+    }
+  </style>
 </head>
 <body>
 
-    <section class="container">
+  <div class="skewed-div">Contenido con skew en la parte superior e inferior</div>
 
-      
-    </section>
-
-
-
-  <script src="p.js"></script>
 </body>
 </html>
