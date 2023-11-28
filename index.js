@@ -53,4 +53,61 @@ function handleScroll() {
 window.addEventListener("scroll", handleScroll);
 
 // Llama a handleScroll al cargar la página para verificar los elementos iniciales
-handleScroll();
+// Asumiendo que tienes un array de datos de cards
+
+// Resto del código...
+
+// Cambiar la imagen de la columna de imagen al hacer scroll
+const imagenSticky = document.getElementById("imagenSticky");
+
+const src1 = "./img/image 21 (1).png";
+const src2 = "./img/image 9.png";
+const src3 = "./img/image 10 (1).png";
+const src4 = "./img/image 6.png";
+
+let cardContainer = document.getElementById("cardsContainer");
+let section = document.querySelector(".masAmigosMAsDiversion");
+let c1, c2, c3, c4;
+c1 = document.getElementById("c1");
+c2 = document.getElementById("c2");
+c3 = document.getElementById("c3");
+c4 = document.getElementById("c4");
+
+section.addEventListener("scroll", () => {
+  let scrollPos = section.scrollTop;
+  console.log(scrollPos);
+  if (scrollPos < 100) {
+    imagenSticky.src = src1;
+    c1.classList.add("active");
+    c2.classList.remove("active");
+    c1.style.opacity = 1;
+
+    // }
+  }
+  if (scrollPos >= 100 && scrollPos < 300) {
+    // Cambiar la imagen al hacer scroll
+    imagenSticky.src = src2;
+    c1.classList.remove("active");
+    c3.classList.remove("active");
+
+    c1.style.opacity = 0;
+
+    c2.classList.add("active");
+    console.log(c1.style.width);
+
+    // cardContainer.innerHTML = card2;
+  }
+  if (scrollPos >= 300 && scrollPos < 500) {
+    // Restaurar la imagen original
+    imagenSticky.src = src3;
+    // cardContainer.innerHTML = card3;
+    c2.classList.remove("active");
+    c3.classList.add("active");
+  }
+
+  if (scrollPos >= 500 && scrollPos < 700) {
+    imagenSticky.src = src4;
+    c3.classList.remove("active");
+    c4.classList.add("active");
+  }
+});

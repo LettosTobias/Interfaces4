@@ -31,7 +31,7 @@ body {
   margin-right: 30px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 1000;
+  font-weight: 900;
   line-height: 18.9px;
   letter-spacing: 1px;
   word-wrap: break-word;
@@ -41,24 +41,25 @@ body {
   padding: 7px;
   /* Drop Shadow */
   box-shadow: 4px 5px 0px 0px #02187e;
+  -webkit-text-stroke: 1px;
+  transition: transform 0.5s ease;
 }
 
-.boton p{
-
+.boton p {
   margin-left: 10px;
   margin-right: 10px;
 }
-
-.boton:hover{
-
-  cursor: pointer;
-  border: 8px solid var(--2982-ff, #0e54b6);
-  background: #b9aa01;
-  color: #020f47;
-
+#comprarAhora {
+  margin-top: 20px;
 }
 
-.menu-Completo{
+.boton:hover {
+  cursor: pointer;
+  border: 8px solid var(--2982-ff, #0e54b6);
+  transform: scale(1.1);
+}
+
+.menu-Completo {
   margin-left: 20px;
 }
 .menu {
@@ -68,7 +69,7 @@ body {
   border-radius: 111px;
   border: 4px solid #2981ff;
   background: #ffe901;
-  filter: drop-shadow(4px 5px 0px #02187E);
+  filter: drop-shadow(4px 5px 0px #02187e);
 }
 
 #main-header {
@@ -77,10 +78,10 @@ body {
   z-index: 1000;
   justify-content: space-between;
   background: linear-gradient(
-                    180deg,
-                  #5499f8 0%,
-                  #5499f8 87.91%,
-                  rgba(84, 153, 248, 0) 100%
+    180deg,
+    #5499f8 0%,
+    #5499f8 87.91%,
+    rgba(84, 153, 248, 0) 100%
   );
   text-align: center;
   padding: 15px;
@@ -283,7 +284,7 @@ body {
 .vengadores .vengadoresBG {
   background: url("./img/image\ 222\ 2.png");
   position: relative;
-  box-shadow: 5px 20px 30px 8px #333;;
+  box-shadow: 5px 20px 30px 8px #333;
 }
 .vengadores .vengadoresBG .hojas {
   position: absolute;
@@ -309,70 +310,58 @@ body {
   top: 60%;
 }
 
-.vengadores .cpl{
-
+.vengadores .cpl {
   top: 130px;
 }
 
-.hojas{
+.hojas {
   z-index: 1;
 }
 
-.scrollFondo{
-  position:absolute;
+.scrollFondo {
+  position: absolute;
   top: 4100px;
-  z-index: -2;
   background-color: #fff;
+  z-index: -2;
   height: 2000px;
   width: 1280px;
   transform: skew(0deg, 6deg);
+  overflow: auto;
+}
+.scrollFondo h1 {
+  transform: skew(0deg, -6deg);
+  margin-top: 200px;
+  position: relative;
+  left: 60px;
+  padding: 20px;
 }
 
- .scroll{
-
-  position:absolute;
-  top:4300px;
- 
-  font-weight: 600;
-  font-size:xx-large;
-  left: 40px;
-  line-height:56.7px;
-
-}
-
-
-.granPoder{
-
+.granPoder {
   position: absolute;
   color: white;
-  font-size:30px;
+  font-size: 30px;
   width: 1280px;
   font-weight: 300;
-  top:6200px;
+  top: 6200px;
   margin-left: 70px;
-
 }
 
-.parteFinal{
+.parteFinal {
   position: absolute;
   top: 6500px;
   width: 1280px;
-
 }
 
-.tresSpider{
-
+.tresSpider {
   position: absolute;
-  top:0;
+  top: 0;
   background-color: white;
   height: 900px;
   width: 100%;
   transform: skew(0deg, -6deg);
 }
 
-
-.spImgs{
-
+.spImgs {
   position: absolute;
   top: 20px;
   align-items: center;
@@ -380,45 +369,33 @@ body {
   margin-left: 170px;
 }
 
-
-.spRosaDos , .spDos , .spNegroDos{
- 
+.spRosaDos,
+.spDos,
+.spNegroDos {
   position: relative;
-  
-  
 }
 
-.subscribeSection{
-
+.subscribeSection {
   position: absolute;
-  top:550px;
-  background: linear-gradient(
-                  180deg,
-                  #8FBEFC 21.2%,
-                  #F7E3D8 81.48%);
+  top: 550px;
+  background: linear-gradient(180deg, #8fbefc 21.2%, #f7e3d8 81.48%);
 
   width: 100%;
   height: 1300px;
-  
 }
 
-.subscribeSection .edificios{
-
+.subscribeSection .edificios {
   position: absolute;
   width: 100%;
   bottom: 0;
 }
 
-
-
-.mailSection{
+.mailSection {
   display: flex;
   flex-direction: row;
 }
 
-
-.teenYcorreo{
-
+.teenYcorreo {
   display: flex;
   flex-direction: column;
   width: 810px;
@@ -429,13 +406,12 @@ body {
 
 .teenYcorreo p {
   font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: 94.5%; /* 18.9px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 94.5%; /* 18.9px */
 }
 
-.teenYcorreo h1{
-
+.teenYcorreo h1 {
   text-align: center;
   font-family: Lato;
   font-size: 60px;
@@ -444,28 +420,23 @@ line-height: 94.5%; /* 18.9px */
   line-height: 94.5%; /* 56.7px */
 }
 
-
-
-.ingresarCorreo{
-
+.ingresarCorreo {
   display: flex;
   border-radius: 50px 0px 0px 50px;
-  border-top: 9px solid #2982FF;
-  border-bottom: 9px solid #2982FF;
-  border-left: 9px solid #2982FF;
-  background: #FFF;
+  border-top: 9px solid #2982ff;
+  border-bottom: 9px solid #2982ff;
+  border-left: 9px solid #2982ff;
+  background: #fff;
   width: 562px;
   height: 90px;
   flex-shrink: 0;
   /* Drop Shadow */
-  box-shadow: 4px 5px 0px 0px #02187E;
+  box-shadow: 4px 5px 0px 0px #02187e;
   text-align: center;
   justify-content: flex-start;
 }
 
-
-
-.ingresarCorreo p{
+.ingresarCorreo p {
   display: flex;
   color: rgba(0, 0, 0, 0.39);
   text-align: center;
@@ -479,11 +450,7 @@ line-height: 94.5%; /* 18.9px */
   margin-left: 40px;
 }
 
-
-
-
-
-.susbBoton{
+.susbBoton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -491,100 +458,83 @@ line-height: 94.5%; /* 18.9px */
   height: 90px;
   flex-shrink: 0;
   border-radius: 0px 50px 50px 0px;
-  border: 9px solid #2982FF;
-  background: #FFE901;
+  border: 9px solid #2982ff;
+  background: #ffe901;
   /* Drop Shadow */
-  box-shadow: 4px 5px 0px 0px #02187E;
+  box-shadow: 4px 5px 0px 0px #02187e;
 }
 
-
-
 .susbBoton p {
-  color: #02187E;
+  color: #02187e;
   font-family: Lato;
   font-size: 20px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 1000;
   line-height: 94.5%; /* 18.9px */
   letter-spacing: 2.2px;
 }
 
-
-
-
-.teen{
-
+.teen {
   width: 25%;
 }
 
-
-.miniSpider1 ,.miniSpider2 , .miniSpider3{
-
+.miniSpider1,
+.miniSpider2,
+.miniSpider3 {
   position: absolute;
   bottom: 0;
   z-index: 1;
 }
 
-
-.miniSpider1{
-
+.miniSpider1 {
   left: 214px;
   bottom: 65px;
 }
 
-.miniSpider2{
-
+.miniSpider2 {
   left: 550px;
   bottom: 170px;
 }
 
-.miniSpider3{
-
+.miniSpider3 {
   left: 960px;
   bottom: 247px;
 }
 
-
-.consolas{
-
-  position: absolute; 
+.consolas {
+  position: absolute;
   width: 100%;
   height: 75px;
   justify-content: center;
   align-items: center;
   background-color: #242424;
-  top:1850px;
-
+  top: 1850px;
 }
 
-.consolas img{
-
+.consolas img {
   margin-left: 120px;
-  
 }
 
-
-footer{
-
+footer {
   position: absolute;
 
-  top:1925px;
-  background-color: #5E5E5D;
+  top: 1925px;
+  background-color: #5e5e5d;
   width: 100%;
   height: 600px;
 }
 
-footer div{
-
+footer div {
   margin-left: 100px;
-  margin-top: 70px; 
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
-  gap:30px;
+  gap: 30px;
 }
 
-footer p , footer b{
-
+footer p,
+footer b {
   color: white;
   width: 70%;
   font-size: 20px;
@@ -594,14 +544,75 @@ footer p , footer b{
   letter-spacing: 2.2px;
 }
 
-footer b{
-  
+footer b {
   text-decoration: underline;
 }
 
-
-footer img{
-
+footer img {
   width: 20%;
- height: 40px;
+  height: 40px;
+}
+.masAmigosMAsDiversion {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width: 100%;
+  position: absolute;
+  overflow: scroll;
+  transform: skew(0, -6deg);
+}
+.masAmigosMAsDiversion::-webkit-scrollbar {
+  display: none;
+}
+
+.columna-imagen {
+  transition: transform 0.3s ease; /* Agrega una transición suave al cambiar la imagen */
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  left: 50%;
+  transition: all 1s ease;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+.columna-imagen img {
+  width: 300px;
+
+  height: 100%;
+  transition: opacity 1s ease-in-out; /* Transición suave de cambio de imagen */
+}
+.cardsContainer .card:first-child {
+  opacity: 1;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.5s ease;
+  transform: translateY(30px);
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(0);
 }
