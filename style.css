@@ -31,7 +31,7 @@ body {
   margin-right: 30px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 900;
+  font-weight: 1000;
   line-height: 18.9px;
   letter-spacing: 1px;
   word-wrap: break-word;
@@ -40,22 +40,18 @@ body {
   white-space: nowrap;
   /* Drop Shadow */
   box-shadow: 4px 5px 0px 0px #02187e;
-  -webkit-text-stroke: 1px;
-  transition: transform 0.5s ease;
 }
 
 .boton p {
   margin-left: 10px;
   margin-right: 10px;
 }
-#comprarAhora {
-  margin-top: 20px;
-}
 
 .boton:hover {
   cursor: pointer;
   border: 8px solid var(--2982-ff, #0e54b6);
-  transform: scale(1.1);
+  background: #b9aa01;
+  color: #020f47;
 }
 
 .menu-Completo {
@@ -69,6 +65,22 @@ body {
   border: 4px solid #2981ff;
   background: #ffe901;
   filter: drop-shadow(4px 5px 0px #02187e);
+  transition: all 0.5s;
+  transform-origin: left;
+}
+
+.menu-Completo:hover div:first-child {
+  transform: rotate(32deg);
+  filter: none;
+}
+
+.menu-Completo:hover div:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-Completo:hover div:last-child {
+  transform: rotate(-32deg);
+  filter: none;
 }
 
 #main-header {
@@ -372,21 +384,51 @@ body {
 .scrollFondo {
   position: absolute;
   top: 4100px;
-  background-color: #fff;
   z-index: -2;
+  background-color: #fff;
   height: 2000px;
   width: 1280px;
   transform: skew(0deg, 6deg);
-}
-
-.scroll {
-  position: absolute;
-  top: 4300px;
-
   font-weight: 600;
   font-size: xx-large;
-  left: 40px;
   line-height: 56.7px;
+}
+
+.titulin {
+  transform: skew(0deg, -6deg);
+  margin-top: 200px;
+  margin-left: 100px;
+}
+
+.scrollSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  margin-top: 100px;
+  margin: 100px;
+  transform: skew(0deg, -6deg);
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.card p {
+  font-family: Lato;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 94.5%; /* 18.9px */
+
+  margin-top: 20px;
+}
+.card h1 {
+  font-family: Lato;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 94.5%; /* 37.8px */
 }
 
 .granPoder {
@@ -419,27 +461,82 @@ body {
   transform: skew(0deg, -6deg);
 }
 
-.spImgs {
-  position: absolute;
-  top: 20px;
-  align-items: center;
-  transform: skew(0deg, 6deg);
-  margin-left: 170px;
-}
-
 .spRosaDos,
 .spDos,
 .spNegroDos {
   position: relative;
+  transition-duration: 1s;
+  z-index: 40;
+  transform: skew(0deg, 6deg);
+}
+
+.spRosaDos {
+  top: 70px;
+  left: 220px;
+}
+
+.spNegroDos {
+  top: 70px;
+  left: 100px;
+}
+
+.spDos {
+  top: 100px;
+  left: 150px;
+}
+
+.fondoRosa {
+  border-top: 20px solid #c92b94;
+  border-bottom: 20px solid #c92b94;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+  height: 900px;
+  width: 100%;
+  transform: skew(0deg, -6deg);
+}
+
+.fondoAzul {
+  border-top: 20px solid #2552c8;
+  border-bottom: 20px solid #2552c8;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+  height: 900px;
+  width: 100%;
+  transform: skew(0deg, -6deg);
+}
+
+.fondoNegro {
+  border-top: 20px solid #304c71;
+  border-bottom: 20px solid #304c71;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+  height: 900px;
+  width: 100%;
+  transform: skew(0deg, -6deg);
+}
+
+.skewInverso {
+  position: absolute;
+  top: 560px;
+  background-color: white;
+
+  height: 500px;
+  width: 100%;
+  z-index: 20;
+  transform: skew(0deg, 6deg);
 }
 
 .subscribeSection {
   position: absolute;
-  top: 550px;
+  top: 640px;
   background: linear-gradient(180deg, #8fbefc 21.2%, #f7e3d8 81.48%);
 
   width: 100%;
   height: 1300px;
+  z-index: 0;
 }
 
 .subscribeSection .edificios {
@@ -567,7 +664,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #242424;
-  top: 1850px;
+  top: 1925px;
 }
 
 .consolas img {
@@ -577,15 +674,15 @@ body {
 footer {
   position: absolute;
 
-  top: 1925px;
-  background-color: #5e5e5d;
+  top: 2000px;
+  background-color: #535353;
   width: 100%;
   height: 700px;
 }
 
 footer div {
   margin-left: 100px;
-  margin-top: 70px;
+
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -610,4 +707,54 @@ footer b {
 footer img {
   width: 20%;
   height: 40px;
+}
+
+.sprite {
+  display: inline-block;
+  background: url("img/spreet1.png") no-repeat;
+  width: 40px;
+  height: 150px;
+  background-position: 0px 0px;
+  animation: move1 1s steps(8) infinite;
+}
+
+@keyframes move1 {
+  to {
+    background-position: -350px 0;
+  }
+}
+
+.redesSprite {
+  display: flex;
+  flex-direction: row;
+}
+
+.sprite2 {
+  display: inline-block;
+  background: url("img/spreet2.png") no-repeat;
+  width: 44px;
+  height: 150px;
+  background-position: 0px 0px;
+  animation: move2 1s steps(10) infinite;
+}
+
+@keyframes move2 {
+  to {
+    background-position: -440px 0;
+  }
+}
+
+.sprite3 {
+  display: inline-block;
+  background: url("img/spreet3.png") no-repeat;
+  width: 50px;
+  height: 150px;
+  background-position: 0px 0px;
+  animation: move3 0.5s steps(6) infinite;
+}
+
+@keyframes move3 {
+  to {
+    background-position: -300px 0;
+  }
 }
